@@ -1,0 +1,306 @@
+{
+  "run_id": "run-1779420140546",
+  "job_index": 1,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 5,
+    "archetype": "calculator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Concevez un environnement idéal pour vos plantes. Cet outil analyse et simule les conditions microclimatiques…",
+    "notes": "Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l'année. Idéal pour…\nFocus on data input for local climate, greenhouse type, and crop needs. Output should be actionable recommendations and simulation graphs.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "provider-space",
+    "provider_space_name": "Provider space",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "calculator",
+      "tool",
+      "generator"
+    ],
+    "forced_design_theme": "mechanical-botanical",
+    "forced_structure_preset": "metric-grid",
+    "site_idea_title": "Simulateur de Microclimat pour Serres Urbaines",
+    "site_idea_summary": "Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l'année. Idéal pour…"
+  },
+  "site_spec": {
+    "slug": "simulateur-de-microclimat-pour-serres-urbaines-1",
+    "theme": {
+      "name": "Mechanical Botanical",
+      "slug": "mechanical-botanical",
+      "eyebrow": "Organic Systems",
+      "family": "mechanical-botanical",
+      "moods": [
+        "organic",
+        "futuristic",
+        "balanced",
+        "fresh"
+      ],
+      "archetypes": [
+        "tool",
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "eco tools",
+        "wellness tools",
+        "sustainability",
+        "travel tools",
+        "consumer utility"
+      ],
+      "keywords": [
+        "organic",
+        "tech",
+        "botanical",
+        "iridescent",
+        "fresh"
+      ],
+      "token_index": [
+        "balanced",
+        "botanical",
+        "calculator",
+        "consumer",
+        "eco",
+        "fresh",
+        "futuristic",
+        "generator",
+        "iridescent",
+        "mechanical",
+        "organic",
+        "sustainability",
+        "systems",
+        "tech",
+        "tool",
+        "tools",
+        "travel",
+        "utility",
+        "wellness"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "display_font": "\"Sora\", sans-serif",
+      "body_font": "\"Manrope\", sans-serif",
+      "layout": "split",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "orbs",
+      "hero_template": "1.08fr 0.92fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 3,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "22px",
+      "palette": {
+        "bg": "linear-gradient(145deg, #081c15 0%, #1b4332 42%, #c7f9cc 100%)",
+        "surface": "rgba(8, 28, 21, 0.74)",
+        "surface_border": "rgba(128,237,153,0.18)",
+        "text": "#f1fff4",
+        "muted": "#b7e4c7",
+        "accent": "#80ed99",
+        "accent_alt": "#72ddf7",
+        "hero_glow": "rgba(128, 237, 153, 0.18)",
+        "button_text": "#062012",
+        "panel_alt": "rgba(255,255,255,0.04)",
+        "shadow": "0 30px 88px rgba(4, 12, 8, 0.34)",
+        "input_fill": "rgba(255,255,255,0.05)"
+      }
+    },
+    "structure": {
+      "name": "Metric Grid",
+      "slug": "metric-grid",
+      "hero_variant": "command",
+      "proof_variant": "metrics",
+      "section_order": [
+        "features",
+        "seo",
+        "proof",
+        "faq"
+      ],
+      "feature_columns": 4,
+      "faq_columns": 2,
+      "family": "data-grid",
+      "moods": [
+        "technical",
+        "precise",
+        "systemic"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator"
+      ],
+      "niches": [
+        "developer tools",
+        "qa",
+        "finance",
+        "analytics"
+      ],
+      "keywords": [
+        "metrics",
+        "grid",
+        "dashboard",
+        "precision"
+      ],
+      "token_index": [
+        "analytics",
+        "calculator",
+        "command",
+        "dashboard",
+        "data",
+        "developer",
+        "faq",
+        "features",
+        "finance",
+        "grid",
+        "metric",
+        "metrics",
+        "precise",
+        "precision",
+        "proof",
+        "seo",
+        "systemic",
+        "technical",
+        "tool",
+        "tools"
+      ]
+    },
+    "render_direction": "atlas-report",
+    "render_direction_name": "Atlas Report",
+    "page_blueprint": "briefing-board",
+    "page_blueprint_name": "Briefing Board",
+    "title": "Simulateur de Microclimat pour Serres Urbaines",
+    "tagline": "Paramètres de votre serre",
+    "description": "Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l",
+    "feature_prefix": "Bloc",
+    "action": "Utiliser l'outil",
+    "cta_primary": "Lancer la Simulation",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "amount",
+        "label": "Montant de base",
+        "type": "number",
+        "placeholder": "7500",
+        "weight": 1.0
+      },
+      {
+        "id": "duration",
+        "label": "Durée estimée",
+        "type": "number",
+        "placeholder": "12",
+        "weight": 0.42
+      },
+      {
+        "id": "plan",
+        "label": "Niveau de service",
+        "type": "select",
+        "options": [
+          {
+            "label": "Essentiel",
+            "value": 1.0
+          },
+          {
+            "label": "Performance",
+            "value": 1.18
+          },
+          {
+            "label": "Premium",
+            "value": 1.34
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Atlas Report",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Résultat recommandé",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Atlas Report",
+      "Lancer la Simulation",
+      "Résultat recommandé",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Résultat recommandé",
+    "result_unit": "EUR",
+    "runtime_mode": "generic_calculator",
+    "page_variant": "console",
+    "faq_topic": "Simulateur de Microclimat pour Serres Urbaines",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Simulateur de Microclimat pour Serres Urbaines ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Simulateur de Microclimat pour Serres Urbaines et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Simulateur de Microclimat pour Serres Urbaines | Paramètres de votre serre</title>\n    <meta name=\"description\" content=\"Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l\">\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap');\n\n        :root {\n            --color-primary: #34495e;\n            --color-secondary: #2c3e50;\n            --color-accent: #2ecc71;\n            --color-background: #ecf0f1;\n            --color-text: #2c3e50;\n            --color-light-text: #7f8c8d;\n            --color-border: #bdc3c7;\n            --font-display: 'IBM Plex Sans', sans-serif;\n            --font-body: 'IBM Plex Sans', sans-serif;\n            --font-mono: 'IBM Plex Mono', monospace;\n        }\n\n        body {\n            font-family: var(--font-body);\n            color: var(--color-text);\n            background-color: var(--color-background);\n            margin: 0;\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            padding: 20px;\n        }\n\n        .container {\n            max-width: 960px;\n            width: 100%;\n            background-color: #fff;\n            padding: 40px 60px;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);\n            border-radius: 8px;\n            margin-bottom: 30px;\n            box-sizing: border-box;\n            border: 1px solid var(--color-border);\n        }\n\n        h1, h2, h3 {\n            font-family: var(--font-display);\n            color: var(--color-primary);\n            font-weight: 600;\n            letter-spacing: -0.02em;\n        }\n\n        h1 {\n            font-size: 3.2em;\n            margin-bottom: 0.2em;\n            line-height: 1.1;\n        }\n\n        h2 {\n            font-size: 2em;\n            border-bottom: 2px solid var(--color-accent);\n            padding-bottom: 10px;\n            margin-top: 40px;\n            margin-bottom: 25px;\n        }\n\n        p {\n            margin-bottom: 1em;\n        }\n\n        .intro {\n            font-size: 1.2em;\n            color: var(--color-light-text);\n            margin-top: 0;\n            margin-bottom: 40px;\n        }\n\n        .form-group {\n            margin-bottom: 20px;\n            display: flex;\n            flex-direction: column;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 8px;\n            font-weight: 600;\n            color: var(--color-secondary);\n            font-family: var(--font-mono);\n            font-size: 0.9em;\n            text-transform: uppercase;\n        }\n\n        input[type=\"number\"],\n        input[type=\"text\"],\n        select {\n            width: 100%;\n            padding: 12px;\n            border: 1px solid var(--color-border);\n            border-radius: 5px;\n            font-family: var(--font-body);\n            font-size: 1em;\n            box-sizing: border-box;\n            background-color: #fcfcfc;\n        }\n\n        input[type=\"range\"] {\n            width: 100%;\n            -webkit-appearance: none;\n            height: 8px;\n            background: var(--color-border);\n            border-radius: 5px;\n            outline: none;\n            opacity: 0.7;\n            transition: opacity .2s;\n        }\n\n        input[type=\"range\"]:hover {\n            opacity: 1;\n        }\n\n        input[type=\"range\"]::-webkit-slider-thumb {\n            -webkit-appearance: none;\n            appearance: none;\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--color-accent);\n            cursor: pointer;\n            border: 2px solid #fff;\n        }\n\n        input[type=\"range\"]::-moz-range-thumb {\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--color-accent);\n            cursor: pointer;\n            border: 2px solid #fff;\n        }\n        .range-value {\n            font-family: var(--font-mono);\n            font-size: 0.9em;\n            color: var(--color-light-text);\n            margin-top: 5px;\n        }\n\n        button {\n            background-color: var(--color-accent);\n            color: white;\n            padding: 15px 30px;\n            border: none;\n            border-radius: 5px;\n            font-size: 1.1em;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n            width: auto;\n            margin-top: 20px;\n        }\n\n        button:hover {\n            background-color: #27ae60;\n        }\n\n        #tool-result {\n            margin-top: 40px;\n            padding: 30px;\n            background-color: #f9f9f9;\n            border: 1px dashed var(--color-accent);\n            border-radius: 8px;\n            min-height: 150px;\n            display: flex;\n            flex-direction: column;\n            gap: 15px;\n        }\n\n        .result-section {\n            margin-bottom: 20px;\n        }\n\n        .result-section h3 {\n            font-size: 1.5em;\n            color: var(--color-primary);\n            margin-bottom: 10px;\n        }\n\n        .result-item {\n            display: flex;\n            justify-content: space-between;\n            padding: 8px 0;\n            border-bottom: 1px dotted var(--color-border);\n        }\n\n        .result-item:last-child {\n            border-bottom: none;\n        }\n\n        .result-label {\n            font-weight: 600;\n            color: var(--color-secondary);\n        }\n\n        .result-value {\n            font-family: var(--font-mono);\n            color: var(--color-text);\n        }\n\n        .graph-placeholder {\n            width: 100%;\n            height: 200px;\n            background-color: #e0e0e0;\n            border-radius: 5px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            color: var(--color-light-text);\n            font-family: var(--font-mono);\n            font-size: 0.9em;\n            margin-top: 15px;\n            border: 1px dashed var(--color-border);\n        }\n\n        .seo-section {\n            margin-top: 60px;\n            padding: 30px;\n            background-color: var(--color-secondary);\n            color: #fff;\n            border-radius: 8px;\n            line-height: 1.7;\n        }\n\n        .seo-section h3 {\n            color: var(--color-accent);\n            margin-bottom: 20px;\n        }\n\n        .seo-section a {\n            color: var(--color-accent);\n            text-decoration: none;\n        }\n\n        .seo-section a:hover {\n            text-decoration: underline;\n        }\n\n        .grid-columns {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 30px;\n        }\n        @media (max-width: 768px) {\n            .container {\n                padding: 30px;\n            }\n            h1 {\n                font-size: 2.5em;\n            }\n            .intro {\n                font-size: 1.1em;\n            }\n            .grid-columns {\n                grid-template-columns: 1fr;\n            }\n        }\n        @media (max-width: 480px) {\n            h1 {\n                font-size: 2em;\n            }\n            .intro {\n                font-size: 1em;\n            }\n            .container {\n                padding: 20px;\n            }\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com\">\n    <meta property=\"og:title\" content=\"Simulateur de Microclimat pour Serres Urbaines\">\n    <meta property=\"og:description\" content=\"Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l\">\n    <meta property=\"og:url\" content=\"https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Simulateur de Microclimat pour Serres Urbaines\", \"description\": \"Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l\", \"url\": \"https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"simulateur-de-microclimat-pour-serres-urbaines-1\" data-runtime-mode=\"generic_calculator\">\n    <div class=\"container\">\n        <h1>Simulateur de Microclimat pour Serres Urbaines</h1>\n        <p class=\"intro\">\n            Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l'année. Idéal pour maximiser votre rendement.\n        </p>\n\n        <form id=\"tool-form\">\n            <h2>Paramètres de votre serre</h2>\n            <div class=\"grid-columns\">\n                <div class=\"form-group\">\n                    <label for=\"location\">Localisation (Ville)</label>\n                    <input type=\"text\" id=\"location\" value=\"Paris\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"month\">Mois de l'année</label>\n                    <select id=\"month\" required>\n                        <option value=\"1\">Janvier</option>\n                        <option value=\"2\">Février</option>\n                        <option value=\"3\">Mars</option>\n                        <option value=\"4\">Avril</option>\n                        <option value=\"5\">Mai</option>\n                        <option value=\"6\">Juin</option>\n                        <option value=\"7\" selected>Juillet</option>\n                        <option value=\"8\">Août</option>\n                        <option value=\"9\">Septembre</option>\n                        <option value=\"10\">Octobre</option>\n                        <option value=\"11\">Novembre</option>\n                        <option value=\"12\">Décembre</option>\n                    </select>\n                </div>\n            </div>\n\n            <div class=\"grid-columns\">\n                <div class=\"form-group\">\n                    <label for=\"greenhouse-type\">Type de Serre</label>\n                    <select id=\"greenhouse-type\" required>\n                        <option value=\"small-plastic\">Petite (plastique)</option>\n                        <option value=\"medium-glass\">Moyenne (verre)</option>\n                        <option value=\"large-polycarbonate\">Grande (polycarbonate)</option>\n                    </select>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"crop-type\">Type de Culture</label>\n                    <select id=\"crop-type\" required>\n                        <option value=\"herbs\">Herbes aromatiques</option>\n                        <option value=\"leafy-greens\">Légumes feuilles</option>\n                        <option value=\"fruiting-veg\">Légumes fruits</option>\n                    </select>\n                </div>\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"target-temp\">Température cible souhaitée (°C)</label>\n                <input type=\"range\" id=\"target-temp\" min=\"10\" max=\"35\" value=\"22\" oninput=\"document.getElementById('target-temp-value').innerText=this.value+'°C'\">\n                <span id=\"target-temp-value\" class=\"range-value\">22°C</span>\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"target-humidity\">Humidité cible souhaitée (%)</label>\n                <input type=\"range\" id=\"target-humidity\" min=\"30\" max=\"90\" value=\"65\" oninput=\"document.getElementById('target-humidity-value').innerText=this.value+'%'\">\n                <span id=\"target-humidity-value\" class=\"range-value\">65%</span>\n            </div>\n\n            <button type=\"submit\" id=\"tool-submit\" data-affiliate-slot=\"simulation-action\">Lancer la Simulation</button>\n        </form>\n\n        <div id=\"tool-result\">\n            <h3 id=\"result-headline\">Résultats de la simulation</h3>\n            <p style=\"text-align: center; color: var(--color-light-text);\">\n                Veuillez remplir le formulaire ci-dessus et lancer la simulation pour voir vos recommandations.\n            </p>\n        </div>\n    </div>\n\n    <div class=\"container seo-section\">\n        <h3>Optimisez Votre Serre Urbaine avec Précision</h3>\n        <p>\n            Que vous soyez un jardinier urbain débutant ou un producteur aguerri, comprendre et maîtriser le microclimat de votre <a href=\"#\" data-affiliate-slot=\"seo-serre-urbaine\">serre urbaine</a> est crucial. Notre simulateur vous aide à anticiper les défis et à mettre en place les solutions adaptées pour une croissance optimale de vos <a href=\"#\" data-affiliate-slot=\"seo-cultures\">cultures</a>. Fini les approximations !\n        </p>\n        <p>\n            Découvrez comment la <a href=\"#\" data-affiliate-slot=\"seo-temperature\">température</a>, l'humidité et l'intensité lumineuse interagissent avec votre <a href=\"#\" data-affiliate-slot=\"seo-local\">environnement local</a>. Obtenez des <a href=\"#\" data-affiliate-slot=\"seo-recommandations\">recommandations personnalisées</a> pour l'irrigation, la ventilation et l'éclairage. Notre outil est indispensable pour tout projet d'agriculture urbaine en <a href=\"#\" data-affiliate-slot=\"seo-france\">France</a>, que vous cultiviez des <a href=\"#\" data-affiliate-slot=\"seo-tomates\">tomates</a> sur un balcon parisien ou des <a href=\"#\" data-affiliate-slot=\"seo-herbes\">herbes aromatiques</a> sur un toit lyonnais.\n        </p>\n        <p>\n            Évitez les maladies, maximisez vos récoltes et contribuez à une agriculture plus durable. Essayez notre <a href=\"#\" data-affiliate-slot=\"seo-simulateur-gratuit\">simulateur de microclimat gratuit</a> dès aujourd'hui et transformez votre espace vert en un écosystème productif !\n        </p>\n    </div>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n            const location = document.getElementById('location').value;\n            const month = parseInt(document.getElementById('month').value);\n            const greenhouseType = document.getElementById('greenhouse-type').value;\n            const cropType = document.getElementById('crop-type').value;\n            const targetTemp = parseInt(document.getElementById('target-temp').value);\n            const targetHumidity = parseInt(document.getElementById('target-humidity').value);\n\n            let recommendations = [];\n            let simulatedTemp = targetTemp + (Math.random() * 4 - 2); // +/- 2 degrees\n            let simulatedHumidity = targetHumidity + (Math.random() * 10 - 5); // +/- 5%\n            let simulatedLight = 0;\n\n            // Base climate data (simplified for demonstration)\n            const monthData = {\n                1: { temp: 5, light: 5, humidity: 85 }, // Janvier\n                2: { temp: 6, light: 6, humidity: 80 },\n                3: { temp: 9, light: 8, humidity: 75 },\n                4: { temp: 12, light: 10, humidity: 70 },\n                5: { temp: 16, light: 12, humidity: 65 },\n                6: { temp: 19, light: 14, humidity: 60 },\n                7: { temp: 21, light: 14, humidity: 58 }, // Juillet\n                8: { temp: 20, light: 13, humidity: 62 },\n                9: { temp: 17, light: 11, humidity: 70 },\n                10: { temp: 13, light: 8, humidity: 78 },\n                11: { temp: 8, light: 6, humidity: 82 },\n                12: { temp: 6, light: 5, humidity: 85 }\n            };\n            const currentMonthData = monthData[month];\n\n            // Adjustments based on greenhouse type\n            let tempInsulation = 0;\n            let humidityRetention = 0;\n            let lightTransmission = 0;\n            switch (greenhouseType) {\n                case 'small-plastic':\n                    tempInsulation = 3; humidityRetention = 10; lightTransmission = 0.8; break;\n                case 'medium-glass':\n                    tempInsulation = 5; humidityRetention = 5; lightTransmission = 0.9; break;\n                case 'large-polycarbonate':\n                    tempInsulation = 7; humidityRetention = 8; lightTransmission = 0.85; break;\n            }\n\n            simulatedTemp = currentMonthData.temp + tempInsulation + (Math.random() * 3 - 1.5);\n            simulatedHumidity = currentMonthData.humidity + humidityRetention + (Math.random() * 8 - 4);\n            simulatedLight = currentMonthData.light * lightTransmission + (Math.random() * 2 - 1); // Hours of effective light\n\n            // Adjustments based on crop type & target\n            let idealTempRange = [20, 25];\n            let idealHumidityRange = [60, 75];\n            let idealLightHours = 12;\n\n            switch (cropType) {\n                case 'herbs':\n                    idealTempRange = [18, 24]; idealHumidityRange = [55, 70]; idealLightHours = 10; break;\n                case 'leafy-greens':\n                    idealTempRange = [15, 22]; idealHumidityRange = [60, 80]; idealLightHours = 12; break;\n                case 'fruiting-veg':\n                    idealTempRange = [22, 28]; idealHumidityRange = [50, 65]; idealLightHours = 14; break;\n            }\n\n            // Generate recommendations\n            if (simulatedTemp < idealTempRange[0] - 2) {\n                recommendations.push(\"Augmenter le chauffage ou améliorer l'isolation.\");\n            } else if (simulatedTemp > idealTempRange[1] + 2) {\n                recommendations.push(\"Améliorer la ventilation ou ombrager la serre.\");\n            } else {\n                recommendations.push(\"La température est bonne, maintenir la surveillance.\");\n            }\n\n            if (simulatedHumidity < idealHumidityRange[0] - 5) {\n                recommendations.push(\"Augmenter l'humidité (vaporisation, humidificateur).\");\n            } else if (simulatedHumidity > idealHumidityRange[1] + 5) {\n                recommendations.push(\"Réduire l'humidité (ventilation, déshumidificateur).\");\n            } else {\n                recommendations.push(\"L'humidité est optimale, peu d'ajustements requis.\");\n            }\n\n            if (simulatedLight < idealLightHours - 3) {\n                recommendations.push(\"Installer un éclairage d'appoint (LED horticoles).\");\n            } else if (simulatedLight > idealLightHours + 3) {\n                recommendations.push(\"Prévoir un ombrage durant les heures les plus intenses.\");\n            } else {\n                recommendations.push(\"L'apport lumineux est adéquat.\");\n            }\n\n            if (recommendations.length === 0) {\n                recommendations.push(\"Les conditions microclimatiques sont idéales pour votre culture!\");\n            }\n\n            const resultHtml = `\n                <div class=\"result-section\">\n                    <h3>Conditions Actuelles Simuléées (${location}, ${document.getElementById('month').options[month-1].text})</h3>\n                    <div class=\"result-item\"><span class=\"result-label\">Température moyenne:</span> <span class=\"result-value\">${simulatedTemp.toFixed(1)}°C</span></div>\n                    <div class=\"result-item\"><span class=\"result-label\">Humidité relative:</span> <span class=\"result-value\">${simulatedHumidity.toFixed(0)}%</span></div>\n                    <div class=\"result-item\"><span class=\"result-label\">Luminosité (heures effectives):</span> <span class=\"result-value\">${simulatedLight.toFixed(1)}h</span></div>\n                </div>\n                <div class=\"result-section\">\n                    <h3>Recommandations Personnalisées</h3>\n                    ${recommendations.map(r => `<div class=\"result-item\"><span class=\"result-value\">➡️ ${r}</span></div>`).join('')}\n                </div>\n                <div class=\"result-section\">\n                    <h3>Visualisation des Données</h3>\n                    <div class=\"graph-placeholder\">Graphique de simulation (température, humidité, lumière sur 24h)</div>\n                </div>\n            `;\n            document.getElementById('tool-result').innerHTML = resultHtml;\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
