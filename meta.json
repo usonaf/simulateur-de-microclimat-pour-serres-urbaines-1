@@ -16,7 +16,7 @@
   "owner_display_name": "Administrator",
   "provider_space_id": "provider-space",
   "provider_space_name": "Provider space",
-  "status": "generated",
+  "status": "failed",
   "run_id": "run-1779420140546",
   "external_site_request_id": null,
   "external_client_ref": null,
@@ -28,10 +28,33 @@
     "status": "pending"
   },
   "deployment": {
-    "status": "pending"
+    "status": "failed"
   },
   "qa": {
-    "status": "pending"
+    "status": "fail",
+    "detail": "desktop: desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds | mobile: Le formulaire natif a mis a jour la zone de resultat.",
+    "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
+    "mode": "native-form",
+    "headline": "Conditions Actuelles Simuléées (Paris, Juillet)",
+    "primary_url": "",
+    "desktop": {
+      "status": "fail",
+      "detail": "desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds",
+      "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
+      "viewport": "desktop"
+    },
+    "mobile": {
+      "status": "pass",
+      "detail": "Le formulaire natif a mis a jour la zone de resultat.",
+      "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
+      "viewport": "mobile",
+      "mode": "native-form",
+      "headline": "Conditions Actuelles Simuléées (Paris, Juillet)",
+      "primary_url": "",
+      "reported_viewport": "mobile",
+      "updated_at": 1779466664
+    },
+    "updated_at": 1779466664
   },
   "features": [
     "Hero pattern: command",
@@ -42,5 +65,7 @@
     "Runtime mode: generic_calculator",
     "Generation mode: direct_html",
     "Artifact rendered, awaiting QA and deployment"
-  ]
+  ],
+  "failure_reason": "desktop: desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds | mobile: Le formulaire natif a mis a jour la zone de resultat.",
+  "failed_at": 1779466664
 }
