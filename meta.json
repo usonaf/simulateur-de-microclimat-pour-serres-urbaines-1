@@ -8,7 +8,7 @@
   "page_blueprint": "briefing-board",
   "language": "fr",
   "country": "FR",
-  "url": null,
+  "url": "https://simulateur-de-microclimat-pour-serres.onrender.com",
   "expected_url": "https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com",
   "created": "2026-05-22T03:22:44.572118+00:00",
   "owner_user_id": "user-1774822953462",
@@ -16,7 +16,7 @@
   "owner_display_name": "Administrator",
   "provider_space_id": "provider-space",
   "provider_space_name": "Provider space",
-  "status": "failed",
+  "status": "ready",
   "run_id": "run-1779420140546",
   "external_site_request_id": null,
   "external_client_ref": null,
@@ -25,36 +25,58 @@
   "publish_target": "render",
   "mode": "production",
   "github": {
-    "status": "pending"
+    "status": "published",
+    "repo_name": "simulateur-de-microclimat-pour-serres-urbaines-1",
+    "repo_url": "https://github.com/usonaf/simulateur-de-microclimat-pour-serres-urbaines-1",
+    "updated_at": 1779466934
   },
   "deployment": {
-    "status": "failed"
+    "status": "ready",
+    "provider": "render",
+    "service_id": "srv-d8886c6k1jcs73ee797g",
+    "project_name": "simulateur-de-microclimat-pour-serres-urbaines-1",
+    "requested_project_name": null,
+    "deployment_id": "dep-d8886cek1jcs73ee79eg",
+    "deployment_url": "https://simulateur-de-microclimat-pour-serres.onrender.com",
+    "public_url": "https://simulateur-de-microclimat-pour-serres.onrender.com",
+    "expected_public_url": "https://simulateur-de-microclimat-pour-serres.onrender.com",
+    "dashboard_url": "https://dashboard.render.com/static/srv-d8886c6k1jcs73ee797g",
+    "ready_state": "live",
+    "target": "production",
+    "updated_at": 1779466953
   },
   "qa": {
-    "status": "fail",
-    "detail": "desktop: desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds | mobile: Le formulaire natif a mis a jour la zone de resultat.",
-    "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
+    "status": "pass",
+    "detail": "desktop: Le formulaire natif a mis a jour la zone de resultat. | mobile: Le formulaire natif a mis a jour la zone de resultat.",
+    "target_url": "http://127.0.0.1:36303/index.html?__qa=functional",
     "mode": "native-form",
     "headline": "Conditions Actuelles Simuléées (Paris, Juillet)",
     "primary_url": "",
     "desktop": {
-      "status": "fail",
-      "detail": "desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds",
-      "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
-      "viewport": "desktop"
+      "status": "pass",
+      "detail": "Le formulaire natif a mis a jour la zone de resultat.",
+      "target_url": "http://127.0.0.1:36303/index.html?__qa=functional",
+      "viewport": "desktop",
+      "mode": "native-form",
+      "headline": "Conditions Actuelles Simuléées (Paris, Juillet)",
+      "primary_url": "",
+      "reported_viewport": "desktop",
+      "attempt": 1,
+      "updated_at": 1779466922
     },
     "mobile": {
       "status": "pass",
       "detail": "Le formulaire natif a mis a jour la zone de resultat.",
-      "target_url": "http://127.0.0.1:43315/index.html?__qa=functional",
+      "target_url": "http://127.0.0.1:36303/index.html?__qa=functional",
       "viewport": "mobile",
       "mode": "native-form",
       "headline": "Conditions Actuelles Simuléées (Paris, Juillet)",
       "primary_url": "",
       "reported_viewport": "mobile",
-      "updated_at": 1779466664
+      "attempt": 1,
+      "updated_at": 1779466924
     },
-    "updated_at": 1779466664
+    "updated_at": 1779466925
   },
   "features": [
     "Hero pattern: command",
@@ -65,7 +87,5 @@
     "Runtime mode: generic_calculator",
     "Generation mode: direct_html",
     "Artifact rendered, awaiting QA and deployment"
-  ],
-  "failure_reason": "desktop: desktop browser run failed: Command '['/usr/bin/google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-data-dir=/tmp/uss-browser-sk8f5n52', '--hide-scrollbars', '--allow-file-access-from-files', '--window-size=1440,960', '--virtual-time-budget=6500', '--dump-dom', 'http://127.0.0.1:43315/index.html?__qa=functional&__qa_viewport=desktop']' timed out after 45 seconds | mobile: Le formulaire natif a mis a jour la zone de resultat.",
-  "failed_at": 1779466664
+  ]
 }
