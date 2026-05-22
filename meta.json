@@ -1,0 +1,46 @@
+{
+  "name": "Simulateur de Microclimat pour Serres Urbaines",
+  "description": "Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l",
+  "theme": "calculator",
+  "design_theme": "mechanical-botanical",
+  "structure_preset": "metric-grid",
+  "render_direction": "atlas-report",
+  "page_blueprint": "briefing-board",
+  "language": "fr",
+  "country": "FR",
+  "url": null,
+  "expected_url": "https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com",
+  "created": "2026-05-22T03:22:44.572118+00:00",
+  "owner_user_id": "user-1774822953462",
+  "owner_username": "admin",
+  "owner_display_name": "Administrator",
+  "provider_space_id": "provider-space",
+  "provider_space_name": "Provider space",
+  "status": "generated",
+  "run_id": "run-1779420140546",
+  "external_site_request_id": null,
+  "external_client_ref": null,
+  "external_source_label": null,
+  "source_type": "generated",
+  "publish_target": "render",
+  "mode": "production",
+  "github": {
+    "status": "pending"
+  },
+  "deployment": {
+    "status": "pending"
+  },
+  "qa": {
+    "status": "pending"
+  },
+  "features": [
+    "Hero pattern: command",
+    "Proof module: metrics",
+    "Design theme: Mechanical Botanical",
+    "Render direction: Atlas Report",
+    "Page blueprint: Briefing Board",
+    "Runtime mode: generic_calculator",
+    "Generation mode: direct_html",
+    "Artifact rendered, awaiting QA and deployment"
+  ]
+}
