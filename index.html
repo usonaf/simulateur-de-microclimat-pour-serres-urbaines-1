@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Microclimat pour Serres Urbaines | Paramètres de votre serre</title>
+    <meta name="description" content="Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap');
+
+        :root {
+            --color-primary: #34495e;
+            --color-secondary: #2c3e50;
+            --color-accent: #2ecc71;
+            --color-background: #ecf0f1;
+            --color-text: #2c3e50;
+            --color-light-text: #7f8c8d;
+            --color-border: #bdc3c7;
+            --font-display: 'IBM Plex Sans', sans-serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            width: 100%;
+            background-color: #fff;
+            padding: 40px 60px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            border: 1px solid var(--color-border);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            margin-bottom: 0.2em;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2em;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .intro {
+            font-size: 1.2em;
+            color: var(--color-light-text);
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1em;
+            box-sizing: border-box;
+            background-color: #fcfcfc;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+        .range-value {
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--color-light-text);
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        #tool-result {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border: 1px dashed var(--color-accent);
+            border-radius: 8px;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .result-section {
+            margin-bottom: 20px;
+        }
+
+        .result-section h3 {
+            font-size: 1.5em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--color-border);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--color-secondary);
+        }
+
+        .result-value {
+            font-family: var(--font-mono);
+            color: var(--color-text);
+        }
+
+        .graph-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-light-text);
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            margin-top: 15px;
+            border: 1px dashed var(--color-border);
+        }
+
+        .seo-section {
+            margin-top: 60px;
+            padding: 30px;
+            background-color: var(--color-secondary);
+            color: #fff;
+            border-radius: 8px;
+            line-height: 1.7;
+        }
+
+        .seo-section h3 {
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .seo-section a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .seo-section a:hover {
+            text-decoration: underline;
+        }
+
+        .grid-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .intro {
+                font-size: 1.1em;
+            }
+            .grid-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .intro {
+                font-size: 1em;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com">
+    <meta property="og:title" content="Simulateur de Microclimat pour Serres Urbaines">
+    <meta property="og:description" content="Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l">
+    <meta property="og:url" content="https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Simulateur de Microclimat pour Serres Urbaines", "description": "Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l", "url": "https://simulateur-de-microclimat-pour-serres-urbaines-1.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="simulateur-de-microclimat-pour-serres-urbaines-1" data-runtime-mode="generic_calculator">
+    <div class="container">
+        <h1>Simulateur de Microclimat pour Serres Urbaines</h1>
+        <p class="intro">
+            Évaluez et optimisez les conditions de température, humidité et lumière pour vos cultures en serre urbaine, en tenant compte des spécificités locales et des périodes de l'année. Idéal pour maximiser votre rendement.
+        </p>
+
+        <form id="tool-form">
+            <h2>Paramètres de votre serre</h2>
+            <div class="grid-columns">
+                <div class="form-group">
+                    <label for="location">Localisation (Ville)</label>
+                    <input type="text" id="location" value="Paris" required>
+                </div>
+                <div class="form-group">
+                    <label for="month">Mois de l'année</label>
+                    <select id="month" required>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7" selected>Juillet</option>
+                        <option value="8">Août</option>
+                        <option value="9">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Décembre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid-columns">
+                <div class="form-group">
+                    <label for="greenhouse-type">Type de Serre</label>
+                    <select id="greenhouse-type" required>
+                        <option value="small-plastic">Petite (plastique)</option>
+                        <option value="medium-glass">Moyenne (verre)</option>
+                        <option value="large-polycarbonate">Grande (polycarbonate)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="crop-type">Type de Culture</label>
+                    <select id="crop-type" required>
+                        <option value="herbs">Herbes aromatiques</option>
+                        <option value="leafy-greens">Légumes feuilles</option>
+                        <option value="fruiting-veg">Légumes fruits</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="target-temp">Température cible souhaitée (°C)</label>
+                <input type="range" id="target-temp" min="10" max="35" value="22" oninput="document.getElementById('target-temp-value').innerText=this.value+'°C'">
+                <span id="target-temp-value" class="range-value">22°C</span>
+            </div>
+
+            <div class="form-group">
+                <label for="target-humidity">Humidité cible souhaitée (%)</label>
+                <input type="range" id="target-humidity" min="30" max="90" value="65" oninput="document.getElementById('target-humidity-value').innerText=this.value+'%'">
+                <span id="target-humidity-value" class="range-value">65%</span>
+            </div>
+
+            <button type="submit" id="tool-submit" data-affiliate-slot="simulation-action">Lancer la Simulation</button>
+        </form>
+
+        <div id="tool-result">
+            <h3 id="result-headline">Résultats de la simulation</h3>
+            <p style="text-align: center; color: var(--color-light-text);">
+                Veuillez remplir le formulaire ci-dessus et lancer la simulation pour voir vos recommandations.
+            </p>
+        </div>
+    </div>
+
+    <div class="container seo-section">
+        <h3>Optimisez Votre Serre Urbaine avec Précision</h3>
+        <p>
+            Que vous soyez un jardinier urbain débutant ou un producteur aguerri, comprendre et maîtriser le microclimat de votre <a href="#" data-affiliate-slot="seo-serre-urbaine">serre urbaine</a> est crucial. Notre simulateur vous aide à anticiper les défis et à mettre en place les solutions adaptées pour une croissance optimale de vos <a href="#" data-affiliate-slot="seo-cultures">cultures</a>. Fini les approximations !
+        </p>
+        <p>
+            Découvrez comment la <a href="#" data-affiliate-slot="seo-temperature">température</a>, l'humidité et l'intensité lumineuse interagissent avec votre <a href="#" data-affiliate-slot="seo-local">environnement local</a>. Obtenez des <a href="#" data-affiliate-slot="seo-recommandations">recommandations personnalisées</a> pour l'irrigation, la ventilation et l'éclairage. Notre outil est indispensable pour tout projet d'agriculture urbaine en <a href="#" data-affiliate-slot="seo-france">France</a>, que vous cultiviez des <a href="#" data-affiliate-slot="seo-tomates">tomates</a> sur un balcon parisien ou des <a href="#" data-affiliate-slot="seo-herbes">herbes aromatiques</a> sur un toit lyonnais.
+        </p>
+        <p>
+            Évitez les maladies, maximisez vos récoltes et contribuez à une agriculture plus durable. Essayez notre <a href="#" data-affiliate-slot="seo-simulateur-gratuit">simulateur de microclimat gratuit</a> dès aujourd'hui et transformez votre espace vert en un écosystème productif !
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const location = document.getElementById('location').value;
+            const month = parseInt(document.getElementById('month').value);
+            const greenhouseType = document.getElementById('greenhouse-type').value;
+            const cropType = document.getElementById('crop-type').value;
+            const targetTemp = parseInt(document.getElementById('target-temp').value);
+            const targetHumidity = parseInt(document.getElementById('target-humidity').value);
+
+            let recommendations = [];
+            let simulatedTemp = targetTemp + (Math.random() * 4 - 2); // +/- 2 degrees
+            let simulatedHumidity = targetHumidity + (Math.random() * 10 - 5); // +/- 5%
+            let simulatedLight = 0;
+
+            // Base climate data (simplified for demonstration)
+            const monthData = {
+                1: { temp: 5, light: 5, humidity: 85 }, // Janvier
+                2: { temp: 6, light: 6, humidity: 80 },
+                3: { temp: 9, light: 8, humidity: 75 },
+                4: { temp: 12, light: 10, humidity: 70 },
+                5: { temp: 16, light: 12, humidity: 65 },
+                6: { temp: 19, light: 14, humidity: 60 },
+                7: { temp: 21, light: 14, humidity: 58 }, // Juillet
+                8: { temp: 20, light: 13, humidity: 62 },
+                9: { temp: 17, light: 11, humidity: 70 },
+                10: { temp: 13, light: 8, humidity: 78 },
+                11: { temp: 8, light: 6, humidity: 82 },
+                12: { temp: 6, light: 5, humidity: 85 }
+            };
+            const currentMonthData = monthData[month];
+
+            // Adjustments based on greenhouse type
+            let tempInsulation = 0;
+            let humidityRetention = 0;
+            let lightTransmission = 0;
+            switch (greenhouseType) {
+                case 'small-plastic':
+                    tempInsulation = 3; humidityRetention = 10; lightTransmission = 0.8; break;
+                case 'medium-glass':
+                    tempInsulation = 5; humidityRetention = 5; lightTransmission = 0.9; break;
+                case 'large-polycarbonate':
+                    tempInsulation = 7; humidityRetention = 8; lightTransmission = 0.85; break;
+            }
+
+            simulatedTemp = currentMonthData.temp + tempInsulation + (Math.random() * 3 - 1.5);
+            simulatedHumidity = currentMonthData.humidity + humidityRetention + (Math.random() * 8 - 4);
+            simulatedLight = currentMonthData.light * lightTransmission + (Math.random() * 2 - 1); // Hours of effective light
+
+            // Adjustments based on crop type & target
+            let idealTempRange = [20, 25];
+            let idealHumidityRange = [60, 75];
+            let idealLightHours = 12;
+
+            switch (cropType) {
+                case 'herbs':
+                    idealTempRange = [18, 24]; idealHumidityRange = [55, 70]; idealLightHours = 10; break;
+                case 'leafy-greens':
+                    idealTempRange = [15, 22]; idealHumidityRange = [60, 80]; idealLightHours = 12; break;
+                case 'fruiting-veg':
+                    idealTempRange = [22, 28]; idealHumidityRange = [50, 65]; idealLightHours = 14; break;
+            }
+
+            // Generate recommendations
+            if (simulatedTemp < idealTempRange[0] - 2) {
+                recommendations.push("Augmenter le chauffage ou améliorer l'isolation.");
+            } else if (simulatedTemp > idealTempRange[1] + 2) {
+                recommendations.push("Améliorer la ventilation ou ombrager la serre.");
+            } else {
+                recommendations.push("La température est bonne, maintenir la surveillance.");
+            }
+
+            if (simulatedHumidity < idealHumidityRange[0] - 5) {
+                recommendations.push("Augmenter l'humidité (vaporisation, humidificateur).");
+            } else if (simulatedHumidity > idealHumidityRange[1] + 5) {
+                recommendations.push("Réduire l'humidité (ventilation, déshumidificateur).");
+            } else {
+                recommendations.push("L'humidité est optimale, peu d'ajustements requis.");
+            }
+
+            if (simulatedLight < idealLightHours - 3) {
+                recommendations.push("Installer un éclairage d'appoint (LED horticoles).");
+            } else if (simulatedLight > idealLightHours + 3) {
+                recommendations.push("Prévoir un ombrage durant les heures les plus intenses.");
+            } else {
+                recommendations.push("L'apport lumineux est adéquat.");
+            }
+
+            if (recommendations.length === 0) {
+                recommendations.push("Les conditions microclimatiques sont idéales pour votre culture!");
+            }
+
+            const resultHtml = `
+                <div class="result-section">
+                    <h3>Conditions Actuelles Simuléées (${location}, ${document.getElementById('month').options[month-1].text})</h3>
+                    <div class="result-item"><span class="result-label">Température moyenne:</span> <span class="result-value">${simulatedTemp.toFixed(1)}°C</span></div>
+                    <div class="result-item"><span class="result-label">Humidité relative:</span> <span class="result-value">${simulatedHumidity.toFixed(0)}%</span></div>
+                    <div class="result-item"><span class="result-label">Luminosité (heures effectives):</span> <span class="result-value">${simulatedLight.toFixed(1)}h</span></div>
+                </div>
+                <div class="result-section">
+                    <h3>Recommandations Personnalisées</h3>
+                    ${recommendations.map(r => `<div class="result-item"><span class="result-value">➡️ ${r}</span></div>`).join('')}
+                </div>
+                <div class="result-section">
+                    <h3>Visualisation des Données</h3>
+                    <div class="graph-placeholder">Graphique de simulation (température, humidité, lumière sur 24h)</div>
+                </div>
+            `;
+            document.getElementById('tool-result').innerHTML = resultHtml;
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
